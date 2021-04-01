@@ -32,9 +32,17 @@ def plot_img(data, nrows=3, ncols=3, rows=28, cols=28):
 def create_subfile_dr(test_data, pca, model):
 
     ids = test_data.index.values + 1
-    test_data_tr = pca.transform(test_data)
+    try:
+        test_data_tr = pca.transform(test_data)
+    except:
+        print('pca transform gone wrong')
+        return 1
 
-    predictions = model.predict(test_data_tr)
+    try:
+        predictions = model.predict(test_data_tr)
+    except:
+        print('predictions gone wrong')
+        return 1
 
     sub_file = pd.DataFrame({'ImageId': ids, 'Label': predictions})
     sub_file.to_csv(f'submission_{model}.csv', sep=',', index=False)
