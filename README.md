@@ -4,7 +4,7 @@ An approach to the kaggle competition ["digit-recognizer"](https://www.kaggle.co
 ## Description
 
 1. kaggle_dr.ipynb: jupyter notebook with the main program;
-2. kaggle_dr_utls.py: python custom library.
+2. kaggle_dr_utls.py: python custom library for dr.
 
 ## Acknowledgements
 
